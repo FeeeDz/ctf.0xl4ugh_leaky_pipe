@@ -13,7 +13,7 @@ We have just fixed the plumbing systm, let's hope there's no leaks!
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 zsh: segmentation fault  ./leaky_pipe
 ```
-It seems like a buffer overflow because there is a segmentation fault. Moreover there is also a interesting memory address. Let's look it into ghidra.
+It seems like a buffer overflow because there is a segmentation fault. Moreover there is also a interesting memory address of the stack pointer (SP). Let's look it into ghidra.
 ```
 undefined8 main(void)
 
