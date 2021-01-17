@@ -53,8 +53,8 @@ undefined8 main(void)
 }
 ```
 This is the main funtion 
-We can see that there is an array of 32 elements <code> local_28 [32] </code> that can take an input of some data <code> read(0,local_28,0x40); </code>
-Now it's time to use this array to overflow and overwrite the ebp register.
+We can see that there is an array of 32 elements <code> local_28 [32] </code> that can take an input of some data <code> read(0,local_28,0x40); </code> <br>
+Now it's time to use this array to overflow and overwrite the rbp register.
 Let's look it into GDB.
 ```
 We have just fixed the plumbing systm, let's hope there's no leaks!
@@ -89,3 +89,4 @@ es             0x0                 0
 fs             0x0                 0
 gs             0x0                 0
 ```
+We see that the RBP register is overwritten with the hex value 41 that means "A" as we given in input and the RIP register now points at <code> 0x555555555295  </code> with offset <code> <main+252> </code>
