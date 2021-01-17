@@ -89,4 +89,4 @@ es             0x0                 0
 fs             0x0                 0
 gs             0x0                 0
 ```
-We see that the RBP register is overwritten with the hex value 41 that means "A" as we given in input and the RIP register now points at <code> 0x555555555295  </code> with offset <code> <main+252> </code>
+We see that the RBP register is overwritten with the hex value 41 that means "A" as we given in input and the RIP register now points at <code>0x555555555295</code> with offset <code> <main+252> </code> <br>
