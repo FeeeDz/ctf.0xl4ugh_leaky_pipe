@@ -93,7 +93,7 @@ We see that the RBP register is overwritten with the hex value 41 that means "A"
 Now we have analyzed the binary. Let's go to write the exploit.
 First we need to calculate the offset that is 32 bytes + 8 bytes to overflow the RBP register. We need also a shell code that will pop up the shell. <br>
 This is the exploit that I create 
-```
+```python
 # https://ctf.0xl4ugh.com/
 from pwn import *
 
