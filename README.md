@@ -122,4 +122,4 @@ r.interactive()
 
 # flag --> Oxl4ugh{waaaah_yaboooooy_kol_daaa_shellcode}
 ```
-Task Resolved, writed by FeeeDz
+Task Resolved, written by FeeeDz
