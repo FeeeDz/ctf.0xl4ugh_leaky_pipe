@@ -53,7 +53,7 @@ undefined8 main(void)
 }
 ```
 This is the main funtion 
-We can see that there is an array of 32 elements <code> local_28 [32] </code> that can take an input of some data <code> read(0,local_28,0x40); </code> <br>
+We can see that there is an array of 32 elements <code>local_28 [32]</code> that can take an input of some data <code> read(0,local_28,0x40); </code> <br>
 Now it's time to use this array to overflow and overwrite the rbp register.
 Let's look it into GDB.
 ```
