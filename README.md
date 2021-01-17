@@ -2,7 +2,10 @@
 
 ### Solution
 We were given a binary.
-
+```
+file leaky_pipe
+leaky_pipe: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=87689ef50fdd96e017be4819a94fe97f3bac65ce, for GNU/Linux 3.2.0, not stripped
+```
 We first run it to see what it does
 ```
 We have just fixed the plumbing systm, let's hope there's no leaks!
