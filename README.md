@@ -14,7 +14,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 zsh: segmentation fault  ./leaky_pipe
 ```
 It seems like a buffer overflow because there is a segmentation fault. Moreover there is also a interesting memory address of the stack pointer (SP). Let's look it into ghidra.
-```
+```C
 undefined8 main(void)
 
 {
@@ -56,7 +56,7 @@ This is the main funtion
 We can see that there is an array of 32 elements <code>local_28 [32]</code> that can take an input of some data <code> read(0,local_28,0x40); </code> <br>
 Now it's time to use this array to overflow and overwrite the rbp register.
 Let's look it into GDB.
-```
+```gdb
 We have just fixed the plumbing systm, let's hope there's no leaks!
 >.> aaaaah shiiit wtf is dat address doin here...  0x7fffffffe010
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
